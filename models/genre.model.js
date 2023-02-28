@@ -11,7 +11,12 @@ module.exports = (sequelize) => {
         name : {
             type : DataTypes.STRING(50),
             allowNull : false,
-            unique : 'UK_Genre_Name' //Attention, unique peut aussi recevoir un boolean, dans ce cas, la clef sera autogénérée et compliquée à manipuler, si vous mettez un nom de clef à la place, c'est d'office true avec précision du nom de la clef
+            unique : 'UK_Genre_Name',
+            validate : {
+                len : [1, 50],
+                notNull : true,
+                notEmpty : true
+            } //Attention, unique peut aussi recevoir un boolean, dans ce cas, la clef sera autogénérée et compliquée à manipuler, si vous mettez un nom de clef à la place, c'est d'office true avec précision du nom de la clef
         }
     }, {
         tableName : 'Genre', //Pour préciser le nom de la table à Sequelize sinon, par défaut, il prend le nom du modèle et rajoute un s à la fin (😞)
