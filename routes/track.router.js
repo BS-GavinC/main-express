@@ -1,7 +1,7 @@
 const trackController = require('../controllers/track.controller');
 const bodyValidation = require('../middlewares/body.validator');
 const pagination = require('../middlewares/pagination.middleware');
-const createTrackValidator = require('../validators/track.validators');
+const {createTrackValidator, updateTrackValidator} = require('../validators/track.validators');
 
 const trackRouter = require('express').Router()
 
@@ -11,7 +11,7 @@ trackRouter.route('/')
 
 trackRouter.route('/:id')
     .get(trackController.getById)
-    .put(trackController.update)
+    .put(bodyValidation(updateTrackValidator), trackController.update)
     .delete(trackController.delete)
 
 

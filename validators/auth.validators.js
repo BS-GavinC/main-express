@@ -9,4 +9,10 @@ const registerValidator = yup.object({
     password : yup.string().required().min(8).matches(pwRegex)
 })
 
-module.exports = registerValidator
+
+const loginValidator = yup.object({
+    email : yup.string().required().trim().email(),
+	password : yup.string().required().min(8).matches(pwRegex)
+})
+
+module.exports = {registerValidator, loginValidator} 
