@@ -13,7 +13,7 @@ module.exports = (sequelize) => {
             allowNull : false,
             validate : {
                 // N'autorise pas les ' ou -
-                isAlpha : true,
+                //isAlpha : true,
                 notNull : true,
                 notEmpty : true,
                 len : [1, 100]
@@ -23,7 +23,7 @@ module.exports = (sequelize) => {
             type : DataTypes.STRING(50),
             allowNull : true,
             validate : {
-                isAlpha : true,
+                //isAlpha : true,
                 notEmpty : true,
                 len : [1, 50]
             }

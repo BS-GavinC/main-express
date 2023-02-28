@@ -14,7 +14,7 @@ module.exports = (sequelize) => {
             validate : {
                 notNull : true, //null
                 notEmpty : true, //''
-                notContains : '/'
+                //notContains : '/'
             }
         },
         cover : {

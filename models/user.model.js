@@ -12,7 +12,7 @@ module.exports = (sequelize) => {
             type : DataTypes.STRING,
             allowNull : false,
             validate : {
-               isAlpha : true,
+               //isAlpha : true,
                notNull : true,
                notEmpty : true,
 
@@ -22,7 +22,7 @@ module.exports = (sequelize) => {
             type : DataTypes.STRING,
             allowNull : false,
             validate : {
-               isAlpha : true,
+               //isAlpha : true,
                notNull : true,
                notEmpty : true,
                
